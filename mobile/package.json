@@ -1,11 +1,14 @@
 {
-  "name": "mobile",
+  "name": "TestApp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:reset": "cd android && ./gradlew clean && ./gradlew --stop && cd ..",
     "ios": "react-native run-ios",
+    "ios:reset": "cd ios && pod cache clean --all && rm -rf ~/Library/Developer/Xcode/DerivedData/* && rm -rf ~/Library/Caches/CocoaPods && rm -rf Pods && pod deintegrate && pod install && cd ..",
     "start": "react-native start",
+    "start:reset": "watchman watch-del-all && rm -rf /tmp/metro-* && rm -rf node_modules/.cached && rm -rf node_modules/.cache/babel-loader/* && react-native start --reset-cache",
     "test": "jest",
     "lint": "eslint ."
   },
