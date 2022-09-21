@@ -59,7 +59,9 @@ const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   useEffect(() => {
-    RNBootSplash.hide();
+    setTimeout(() => {
+      RNBootSplash.hide();
+    }, 10000);
   }, [])
 
   const backgroundStyle = {
